@@ -25,6 +25,49 @@ const Home = () => {
             </div>
           </section>
        </main>
+       {/* 2nd section  */}
+       <section className='section-analytics'>
+          <div className='container grid grid-four-cols'>
+            <div className='div1'>
+              <h2>50+</h2>
+              <p>Registered companies</p>
+            </div>
+            <div className='div1'>
+              <h2>100,00+</h2>
+              <p>Happy Clients</p>
+            </div>
+            <div className='div1'>
+              <h2>500</h2>
+              <p>Well known Developers</p>
+            </div>
+            <div className='div1'>
+              <h2>24/7</h2>
+              <p>Services</p>
+            </div>
+          </div>
+       </section>
+
+       {/* 3red section */}
+       <section className='section-hero'>
+            <div className='container grid grid-two-cols'>
+            <div className='hero-image'>
+                   <img src='/images/design.png' alt='code together' width={500} height={500}/>
+                </div>
+                <div className='hero-content'>
+                  <p>We are here to help you</p>
+                  <h1>Get Started Today</h1>
+                  <p> Ready to take the first step towards a more efficient and secure It infrastructure? Contact us today for a free consultant and let's discuss how AJ can help your business thrive in the digital age. </p>
+                  <div className='btn btn-group'>
+                    <a href='/contact'>
+                       <button className='btn'>Connect Now</button>
+                    </a>
+                    <a href='/services'>
+                       <button className='btn secondary-btn'>Learn More</button>
+                    </a>
+                  </div>
+                </div>
+            </div>
+          </section>
     </>
   )
 }

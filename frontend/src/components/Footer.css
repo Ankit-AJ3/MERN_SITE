@@ -1,0 +1,19 @@
+/* Footer.css */
+
+.footer {
+    background-color:#646cff;
+    color: #fff;
+    padding: 250px 5;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .container p {
+    margin: 1px 0;
+  }
