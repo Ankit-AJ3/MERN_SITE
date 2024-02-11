@@ -1,4 +1,5 @@
 import React from 'react'
+import Analatics from '../components/Analatics'
 
 const About = () => {
   return (
@@ -33,6 +34,7 @@ const About = () => {
             </div>
           </section>
       </main>
+      <Analatics/>
     </>
   )
 }

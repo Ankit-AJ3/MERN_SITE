@@ -9,6 +9,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
+import Error from './pages/Error';
+import Logout from './pages/Logout';
 
 function App() {
 
@@ -19,10 +21,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
-          <Route path='/Contact' element={<Contact/>}/>
-          <Route path='/Service' element={<Service/>}/>
-          <Route path='/Register' element={<Register/>}/>
-          <Route path='/Login' element={<Login/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/service' element={<Service/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/logout' element={<Logout/>}/>
+          <Route path='/*' element={<Error/>}/>
         </Routes>
         <Footer/>
      </BrowserRouter>
@@ -30,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

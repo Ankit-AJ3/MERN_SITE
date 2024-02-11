@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from '../store/Auth';
 
 const Login = () => {
 
@@ -6,6 +8,9 @@ const Login = () => {
      email: "",
      password: "",
   });
+
+  const navigate = useNavigate();
+  const { storeTokenInLS } = useAuth();
 
   // handling the inputs
   const handleInput = (e) =>{
@@ -19,16 +24,43 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) =>{
       e.preventDefault();
-      console.log(user);
-  };
+    try {
+      const response = await fetch (`http://localhost:3200/api/auth/login`,{
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      console.log("login form",response);
+      if(response.ok){
+        const res_data = await response.json();
+        console.log("res from server",res_data);
+
+        // stored the token in localhost
+        storeTokenInLS(res_data.token);
+
+        alert("login successfull");
+        console.log("login successfull");
+        setUser({email: "", password: ""});
+        navigate("/");
+      }else{
+        alert("Invalid credential");
+        console.log("Invalid credential");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    };
 
   return (
     <>
       <section>
         <main>
-          <div className='section-login'>
+          <div className='section-registration'>
             <div className='container grid grid-two-cols'>
               <div className='login-image'>
                 <img src='/images/login.png' alt='login_image' width='500' height='500'/>
