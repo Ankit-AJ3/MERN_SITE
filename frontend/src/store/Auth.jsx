@@ -35,6 +35,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 
             if(response.ok){
                 const data = await response.json();
+                console.log("User data", data);
                 setUser(data);
             }
 
@@ -48,7 +49,7 @@ import { createContext, useContext, useState, useEffect } from "react";
     },[]);
 
     return(
-        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser,}}>
+        <AuthContext.Provider value={{ isLoggedIn, storeTokenInLS, LogoutUser, user}}>
             {children}
         </AuthContext.Provider>
     );
