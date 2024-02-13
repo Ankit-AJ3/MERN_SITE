@@ -28,5 +28,5 @@ const PORT = 3200;
 connectDb().then(()=>{
   app.listen(PORT, () => {
       console.log(`server is running on port ${PORT}`);
-    });
+    }); 
 });
