@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../store/Auth';
+import { useAuth } from '../store/auth';
 
 
 const Contact = () => {
