@@ -35,8 +35,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 
             if(response.ok){
                 const data = await response.json();
-                console.log("User data", data);
-                setUser(data);
+                console.log("User data", data.userData);
+                setUser(data.userData);
             }
 
         } catch (error) {
