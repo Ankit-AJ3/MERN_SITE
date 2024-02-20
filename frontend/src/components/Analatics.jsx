@@ -27,4 +27,4 @@ const Analatics = () => {
   )
 }
 
-export default Analatics
+export default Analatics;

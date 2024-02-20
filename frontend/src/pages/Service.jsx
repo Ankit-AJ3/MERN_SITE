@@ -1,6 +1,6 @@
 import { useAuth } from "../store/auth";
 
-export const Service = () => {
+const Service = () => {
   const { services } = useAuth();
 
   return ( 
@@ -39,3 +39,5 @@ export const Service = () => {
     </section>
   );
 };
+
+export default Service;

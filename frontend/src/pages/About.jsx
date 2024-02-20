@@ -1,5 +1,5 @@
 import React from 'react';
-import { Analatics } from '../components/Analatics';
+import  Analatics from '../components/Analatics';
 import { useAuth } from '../store/auth';
 
 const About = () => {
@@ -41,4 +41,4 @@ const About = () => {
   )
 }
 
-export default About
+export default About;
