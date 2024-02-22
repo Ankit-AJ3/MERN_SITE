@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../store/auth';
 
 const defaultContactFormData = {
@@ -8,24 +8,6 @@ const defaultContactFormData = {
 };
 
 const Contact = () => {
-
-  const MapSection = () => {
-    const [mapLoaded, setMapLoaded] = useState(false);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        // Perform any asynchronous tasks here if needed
-  
-        // Simulate an asynchronous task (e.g., fetching data)
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-  
-        // Set mapLoaded to true after the asynchronous task is completed
-        setMapLoaded(true);
-      };
-  
-      fetchData("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59783.37883519841!2d76.1453485783928!3d20.528303268105798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda1df8cd6d9cb1%3A0x5f36a09324f0bb4d!2sBuldana%2C%20Maharashtra%20443001!5e0!3m2!1sen!2sin!4v1704983029588!5m2!1sen!2sin");
-    }, []); // Empty dependency array means this useEffect runs once on component mount
-  
 
     const [contact, setContact] = useState(defaultContactFormData);
 
@@ -109,17 +91,9 @@ const Contact = () => {
                 </div>
             </div>
             <section className='mb-3'>
-      {mapLoaded && (
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59783.37883519841!2d76.1453485783928!3d20.528303268105798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda1df8cd6d9cb1%3A0x5f36a09324f0bb4d!2sBuldana%2C%20Maharashtra%20443001!5e0!3m2!1sen!2sin!4v1704983029588!5m2!1sen!2sin"
-          width="100%"
-          height="450"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      )}
-    </section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59783.37883519841!2d76.1453485783928!3d20.528303268105798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bda1df8cd6d9cb1%3A0x5f36a09324f0bb4d!2sBuldana%2C%20Maharashtra%20443001!5e0!3m2!1sen!2sin!4v1704983029588!5m2!1sen!2sin" width="100%" height="450" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+          </section>
     </>
   )
 }
